@@ -1,38 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;515;600;700&display=swap");
+
 .App {
-  text-align: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: Fira Code;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 3fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  height: 60px;
+  color: #1a2026;
+  background-color: #ffd9cb;
+  padding-left: 20px;
+  padding-right: 40px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-weight: 500;
+  font-size: large;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: rgb(8, 8, 8);
+  color: #ffd9cb;
+  margin: 0;
+  font-weight: 400;
+  font-size: small;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.textInput {
+  height: 100vh;
+  background-color: #1a2026;
   color: white;
+  padding-left: 20px;
+  padding-top: 20px;
+  border: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.textPreview {
+  height: 100vh;
+  background-color: #283038;
+  color: white;
+  padding-left: 20px;
+  padding-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  width: 100px;
+  height: 30px;
+  color: white;
+  background-color: #df8463;
+  border-radius: 30px;
+  border: 0;
+  outline: none;
+  font-family: Fira Code;
+}
+
+button:hover {
+  background-color: #eb997c;
+}
+
+button:focus,
+button:active {
+  background-color: #e27958;
+}
+
+.textInput:active,
+.textInput:focus {
+  border: 0;
+  outline: none;
 }

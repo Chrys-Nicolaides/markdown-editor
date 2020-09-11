@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import "./App.css";
 
 function App() {
+  const [markdown, setMarkdown] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  let userInput = () => {
+    if (isTyping === true) {
+      setMarkdown();
+    } else {
+      setMarkdown(markdown);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="navbar">
+        <header>Markdown</header>
+        <button>save</button>
+      </div>
+      <div className="body">
+        <div className="sidebar">Files</div>
+        <textarea
+          onChange={(e) => setMarkdown(e.target.value)}
+          value={markdown}
+          className="textInput"
+          placeholder="#type here.."
+        ></textarea>
+        <ReactMarkdown className="textPreview" source={markdown} />
+      </div>
     </div>
   );
 }
